@@ -1,0 +1,46 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    
+    &__logo{
+        margin-left: 10px;
+        margin-right: 56px;
+    }
+    &__search-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: solid 3px #ffd014;
+        border-radius: 28px;
+        width: 594px;
+        height: 56px;
+        input{
+            border: none;
+            margin-left: 24px;
+            font-size: 18px;
+            color: #868686;
+            width: 261px;
+            height: 21px;
+        }
+        &-ic_search{
+            margin-right: 24px;
+        }
+    }
+    &__menu{
+        margin-right: 16px;
+    }
+    .empty{
+        flex: 1;
+    }
+    @media screen and (max-width: 768px){
+        &__search-bar{
+            display: none;
+            // 돋보기가 안나오는 문제 ㅠㅠ
+            // search-bar가 줄어들지 않고 empty 영역이 줄어드는 문제..
+        }
+    }
+    @media screen and (max-width: 375px){
+        
+    }
+}
