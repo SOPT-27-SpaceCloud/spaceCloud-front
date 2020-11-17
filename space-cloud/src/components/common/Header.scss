@@ -1,22 +1,29 @@
+$spacecloud_yellow: #ffd014;
+
 .header{
     display: flex;
     align-items: center;
-    padding: 14px;
+    // padding: 14px;
+    margin: 14px 0px;
     
+    &__phone-logo{
+        display: none;
+    }
     &__logo{
-        margin-left: 10px;
+        margin-left: 24px;
         margin-right: 56px;
     }
     &__search-bar{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        border: solid 3px #ffd014;
+        // justify-content: space-between;
+        border: solid 3px $spacecloud_yellow;
         border-radius: 28px;
         width: 594px;
         height: 56px;
         input{
             border: none;
+            outline: none;
             margin-left: 24px;
             font-size: 18px;
             color: #868686;
@@ -27,20 +34,38 @@
             margin-right: 24px;
         }
     }
+    &__empty{
+        flex: 1;
+    }
     &__menu{
-        margin-right: 16px;
+        margin-right: 26px;
     }
     .empty{
         flex: 1;
+        min-width: 158px;
     }
     @media screen and (max-width: 768px){
-        &__search-bar{
-            display: none;
-            // 돋보기가 안나오는 문제 ㅠㅠ
-            // search-bar가 줄어들지 않고 empty 영역이 줄어드는 문제..
+        .empty{
+            min-width: 0;
         }
-    }
-    @media screen and (max-width: 375px){
-        
+        &__search-bar{
+            visibility: hidden;
+            input{
+                display: none;
+            }
+            // 돋보기가 안나오는 문제 ㅠㅠ
+            // search-bar가 줄어들지 않고 empty 영역이 줄어드는 문제.. -> min-width 사용하여 해결!(정적인 값으로 width주기)
+            &-ic_search {
+                visibility: visible;
+            }
+        }
+        @media screen and (max-width: 375px){
+            &__logo{
+                display: none;
+            }
+            &__phone-logo{
+                display: block;
+            }
+        }
     }
 }
