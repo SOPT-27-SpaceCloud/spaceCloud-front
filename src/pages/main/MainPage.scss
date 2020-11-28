@@ -1,0 +1,119 @@
+$spacecloud_yellow: #ffd014;
+
+.image-slider{
+    background-color: $spacecloud_yellow;
+    height: 450px;
+    border : 1px solid #000000;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main{
+    &__container{
+        // Todo. 이 수치 static 말고 다르게?  
+        // 여기 width에 따라 grid auto-fill 적용됨!
+        max-width: 964px; 
+        margin: 0 20px;
+    }
+    &__table{
+        display: flex;
+        flex-direction: column;
+        &-head{
+            display:flex;
+            .title{
+                margin-top: 79px;
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+        &-body{
+            table{
+                margin-top: 37px;
+                border-collapse: collapse;
+                color: #747474;
+                font-size: 17px;
+                td{
+                    width: 320px;
+                    padding: 18px 0;
+                    border: 1px solid #CBCBCB;
+                }
+                tr{
+                    text-align: center;
+                    border: 1px solid #CBCBCB;
+                }
+            }
+        }
+    }
+}
+
+.card{
+    max-width: 100vw;
+    margin-top: 40px;
+    margin-bottom: 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); // 310px : Card의 width
+    gap: 16px;
+    justify-items: stretch; // 태블릿 bp로 가기 직전 줄어드는 반응형 때 가운데 정렬하기 위함
+    align-items: center;
+    img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main{
+        &__container{
+            margin: 0 67px;
+        }
+        &__table{
+            &-head{
+                justify-content: center;
+                .title{
+                    margin-top: 47px;
+                    font-size: 24px;
+                }
+            }
+            &-body table{
+                margin-top: 29px;
+                font-size: 15px;
+                td{
+                    max-width: 210px;
+                }
+            }
+        }
+    }
+    .card{
+        margin-top: 46px;
+    }
+}
+@media screen and (max-width: 375px){
+    .main{
+        &__container{
+            margin: 0 20px;
+        }
+        &__table{
+            &-head{
+                .title{
+                    margin-top: 27px;
+                    font-size: 20px;
+                }
+            }
+            &-body{
+                table{
+                    margin-top: 15px;
+                    font-size: 13px;
+                    td{
+                        min-width: 106px;
+                    }
+                }
+            }
+        }
+    }
+    .card{
+        margin-top: 29px;
+    }
+}
