@@ -1,15 +1,14 @@
 @font-face {
-    font-family: "space-cloud";
-    src:url('../../assets/font/NanumBarunGothicBold.ttf') format('truetype');
-    src:url('../../assets/font/NanumBarunGothic.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+  font-family: "space-cloud";
+  src: url("../../assets/font/NanumBarunGothicBold.ttf") format("truetype");
+  src: url("../../assets/font/NanumBarunGothic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
-#purple_outline{
-    
-    //바깥 테두리 보라색 넣기
-    /*
+#purple_outline {
+  //바깥 테두리 보라색 넣기
+  /*
     position: fixed;
     right:0;
     width: 351px;
@@ -18,126 +17,168 @@
     box-sizing: border-box;
     */
 
-    @media(min-width: 768px) {
-        
-    }
+  @media (min-width: 768px) {
+  }
 }
 
-.purple_stroke{
-    display:flex;
-    background-color: #7150D6;
-    border: 2px solid #7150D6;
+.purple_stroke {
+  display: flex;
+  background-color: #7150d6;
+  border: 2px solid #7150d6;
 
-    @media(min-width: 768px) {
-        display:none;
-    }
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
-.margin{
-    margin : 0 20px;
-    font-family:space-cloud;
+.margin {
+  margin: 0 20px;
+  font-family: space-cloud;
 }
 
-.tap{
-    display: flex;
-    
-    height:58px;
-    align-items: center;
+.tap {
+  display: flex;
 
-    .title{
-        font-family:inherit;
-        font-weight:bold;
-        font-size:20px; //rem...
-    }
+  height: 58px;
+  align-items: center;
 
-    .right{
-        display:flex;
-        width:72px;
-        position: absolute;
-        right:0;
-        margin-right: 16px;
-        justify-content: space-evenly;
-    
-        .icon{
-            margin-right: 8px;
-        }
-    }
-}
-
-.gray_stroke{
-    border : 0.5px solid #DDDDDD;
-    background: #DDDDDD;
-}
-
-#place{
-    background-image: url("../../assets/images/detail_place_img_room.png");
-    border-radius: 8px;
-
-    width:100%;
-    padding-top:44%;
-    margin-top: 16px;
-    margin-bottom: 16px;
-
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:cover;
-}
-
-.semi-title{
-    font-family:inherit;
-    font-weight:bold;
-    font-size:17px;
-}
-
-.place_detail{
-    font-family:inherit;
-    font-weight:normal;
-    font-size:14px;
-
-    margin-top: 18px;
-    margin-bottom: 32px;
-    line-height: 160%;
-}
-
-.text{
-    font-family:inherit;
-    font-weight:normal;
-    font-size: 14px;
-    display:flex;
-    margin: 12px 0;
-
-    .gray{
-        color : #909090;
-    }
-
-    .black{
-        color:black;
-        margin-left:40px;
-    }
-}
-
-#purple_stroke_slim{
-    position: relative;
-    display:flex;
-    border: 0.5px solid #7150D6;
-    background-color: #7150D6;
-    margin-top:32px;
-}
-
-#gray_stroke_middle{
-    margin-bottom:19px;
-    border : 0.5px solid #DDDDDD;
-    background: #DDDDDD;
-}
-
-.option{
-    margin-bottom:16px;
+  .title {
     font-family: inherit;
-    font-weight: normal;
-    font-size: 17px;
+    font-weight: bold;
+    font-size: 20px; //rem...
+  }
+
+  .right {
+    display: flex;
+    width: 72px;
+    position: absolute;
+    right: 0;
+    margin-right: 16px;
+    justify-content: space-evenly;
+
+    .icon {
+      margin-right: 8px;
+    }
+  }
+}
+.top_title {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.radioBtn{
-    //커스텀중..,
-    margin-right:8px;
+.gray_stroke {
+  border: 0.5px solid #dddddd;
+  background: #dddddd;
+}
+
+#place {
+  background-image: url("../../assets/images/detail_place_img_room.png");
+  border-radius: 8px;
+
+  width: 100%;
+  padding-top: 44%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.semi-title {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.place_detail {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+
+  margin-top: 18px;
+  margin-bottom: 32px;
+  line-height: 160%;
+}
+
+.text {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  display: flex;
+  margin: 12px 0;
+
+  .gray {
+    color: #909090;
+  }
+
+  .black {
+    color: black;
+    margin-left: 40px;
+  }
+  .purple {
+    color: #7150d6;
+  }
+}
+
+#purple_stroke_slim {
+  position: relative;
+  display: flex;
+  border: 0.5px solid #7150d6;
+  background-color: #7150d6;
+  margin-top: 32px;
+}
+
+#gray_stroke_middle {
+  margin-bottom: 19px;
+  border: 0.5px solid #dddddd;
+  background: #dddddd;
+}
+
+.option {
+  margin-bottom: 16px;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.radioBtn {
+  //커스텀중..,
+  margin-right: 8px;
+}
+
+.tag {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px 6px;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #7150d6;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-family: inherit;
+  font-weight: normal;
+}
+.left_button {
+  position: relative;
+  top: 500px;
+  z-index: 100;
+  background: url("../../assets/images/banner_ic_arrow_left.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+
+.right_button {
+  position: relative;
+  background-image: url("../../assets/images/banner_ic_arrow_right.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
 }

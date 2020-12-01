@@ -10,7 +10,7 @@ const DetailMiddleComponent = () => {
 
     return(
         <div id = "purple_outline">
-            <div class = "purple_stroke"/>
+            
 
             <div class = "margin">
                 <div class = "tap">
