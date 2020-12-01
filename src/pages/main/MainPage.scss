@@ -1,13 +1,9 @@
+
 $spacecloud_yellow: #ffd014;
 
-.image-slider{
-    background-color: $spacecloud_yellow;
-    height: 450px;
-    border : 1px solid #000000;
-}
 
 .container{
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
