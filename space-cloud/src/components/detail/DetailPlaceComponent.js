@@ -1,5 +1,5 @@
 import React from "react";
-import './seyoung.scss';
+import './middle.scss';
 import share from '../../assets/images/detail_place_ic_share.svg'
 import heart from '../../assets/images/detail_place_ic_heart.svg'
 
