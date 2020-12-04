@@ -5,19 +5,23 @@
     background-color: #CBCBCB;
     align-items: center;
     flex-wrap: wrap;
-    &_top{
-        display: flex;
+    justify-content: center;
+    overflow: auto;
+    &_top {
         margin: 0px 460px;
+        display: flex;
         margin-bottom: 20px;
         flex-wrap: wrap;
         color: #535353;
         &_list{
             margin-top: 6px;
-            margin-left: 370px;
             font-weight: bold;
         }
         &_line{
             margin-top: 7px;
+        }
+        &_lineTablet{
+            display: none;
         }
         &_text1{
             margin-top: 30px;
@@ -34,12 +38,84 @@
         &_bottom1{
             margin-top: 60px;
             font-size: 10px;
+            max-width: 50%;
         }
         &_bottom2{
             margin-top: 60px;
             font-size: 7px;
             opacity: 0.5;
-            margin-left: 80px;
+            margin-left: 80px;   
+        }
+        .empty{
+            flex: 1; 
+        }
+    }
+    @media screen and (max-width: 768px){
+        .empty{
+            min-width: 0;
+        }
+        &_top{
+            margin: 0;
+            width: 90%;
+            overflow: auto;
+            &_line{
+                display: none;
+            }
+            &_lineTablet{
+                display: block;
+                margin-top: 5px;
+            }
+            &_list{
+                font-size: 13px;
+            }
+            &_text1{
+                width: 65%;
+                font-size: 12px;
+            }
+            &_text2{
+                width: 63%;
+                margin-bottom: 4px;
+                font-size: 12px;
+            }
+            &_text3{
+                font-size: 10px;
+            }
+            &_bottom1{
+                font-size: 10px;
+                max-width: 51%;
+            }
+            &_bottom2{
+                font-size: 11px;
+            }
+        }
+        @media screen and (max-width: 375px){
+            &_top{
+                border: solid 1px green;
+                &_line{
+                    display: none;
+                }
+                &_lineTablet{
+                    display: none;
+                }
+                &_list{
+                    display: none;
+                }
+                &_text1{
+                    display: none;
+                }
+                &_text2{
+                    display: none;
+                }
+                &_text3{
+                    display: none;
+                }
+                &_bottom1{
+                    display: none;
+                }
+                &_bottom2{
+                    display: none;
+                }
+            }
         }
     }
 }
