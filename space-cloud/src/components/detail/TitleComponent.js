@@ -26,7 +26,7 @@ const Width = styled.div`
     //~1000px까지 960px 너비 고정
     //~768까지 마진 20px 두고 너비 좁혀지게
 
-    @media (min-width: 768px) and (max-width:1000px) {
+    @media (max-width:1000px) {
         left:0;
         margin-left:20px;
     }

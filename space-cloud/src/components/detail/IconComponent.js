@@ -10,7 +10,7 @@ const Wrapper = styled.div`
         font-style: normal;
         font-weight: normal;
     }
-    width:151px;
+    width:170px;
     height: 40px;
     border-width: 0 10px 10px 0;
     display:flex;

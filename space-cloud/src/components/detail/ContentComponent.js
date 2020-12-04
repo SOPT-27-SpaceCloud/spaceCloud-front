@@ -22,6 +22,10 @@ const Wrapper = styled.div`
         justify-content:center;
         margin-bottom:110px;
     }
+
+    @media (max-width:768px){
+        margin-bottom:64px;
+    }
 `
 
 const Width = styled.div`
@@ -41,7 +45,7 @@ const Content = styled.div`
     font-family:inherit;
     font-size:17px;
     font-weight:normal;
-    @media (min-width: 768px) and (max-width:1000px) {
+    @media (max-width:1000px) {
         margin-left:20px;
     }
 `

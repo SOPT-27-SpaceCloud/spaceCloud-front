@@ -19,13 +19,15 @@ import icon_toilet from '../../assets/images/place_ic_toilet.svg';
 import icon_wifi from '../../assets/images/place_ic_wifi.svg';
 
 const Wrapper = styled.div`
+    margin-bottom:64px;
+    
     @media (min-width: 768px) {
         width:100%auto;
         display:flex;
         justify-content:center;
         box-sizing: border-box;
 
-        border-bottom:110px;
+        margin-bottom:110px;
     }
 `
 
@@ -33,7 +35,7 @@ const Width = styled.div`
     //~1000px까지 960px 너비 고정
     //~768까지 마진 20px 두고 너비 좁혀지게
 
-    @media (min-width: 768px) and (max-width:1000px) {
+    @media (max-width:1000px) {
         margin-left:20px;
         display:flex;
         position:absolute;
