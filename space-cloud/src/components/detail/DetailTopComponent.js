@@ -1,12 +1,9 @@
 import React from "react";
 import './middle.scss';
-import styled from "styled-components";
-import share from '../../assets/images/detail_place_ic_share.svg'
-import heart from '../../assets/images/detail_place_ic_heart.svg'
 
 const DetailTopComponent = () => {
     return(
-        <div id = "purple_outline">
+        <div>
 
 
             <div class = "margin">
