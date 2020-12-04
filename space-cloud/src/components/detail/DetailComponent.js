@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from 'react';
 import listAPI from '../../lib/listAPI'
-import DetailMiddleComponent from './DetailMiddleComponent'
+import DetailFloatingComponent from './DetailFloatingComponent'
 import DetailTopComponent from './DetailTopComponent'
 import Slider from "./Slider";
 
@@ -13,7 +13,7 @@ const DetailComponent = () => {
         <div>
             <Slider/>
             <DetailTopComponent/>
-            <DetailMiddleComponent/>
+            <DetailFloatingComponent/>
         </div>
         
     );
