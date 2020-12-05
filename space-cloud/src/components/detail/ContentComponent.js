@@ -45,18 +45,37 @@ const Content = styled.div`
     font-family:inherit;
     font-size:17px;
     font-weight:normal;
-    @media (max-width:1000px) {
-        margin-left:20px;
+    .p{
+    white-space : pre-wrap;
+    }
+    @media (min-width: 768px) and (max-width:1000px) {
+        left:0;
+        width:460px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+    @media (min-width: 1000px) {
+        width:460px;
+        margin-left:0px;
+        margin-right:10px;
+
+    }
+    @media (max-width: 768px) {
+        margin-left:10px;
+        margin-right:10px;
     }
 `
 
-const ContentComponent = ({title, content}) => {
+const ContentComponent = ({title, content,default1,time,default2,day}) => {
 
     return(
         <Wrapper>
             <Width>
                 <TitleComponent title = {title}></TitleComponent>
                 <Content>{content}</Content>
+                <Content><p> <b> {default1} &emsp;</b> {time}</p></Content>
+                <Content><p> <b> {default2} &emsp;</b><t></t> {day}</p></Content>
             </Width>
         </Wrapper>
         

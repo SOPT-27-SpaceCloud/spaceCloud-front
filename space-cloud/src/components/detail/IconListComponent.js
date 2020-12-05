@@ -20,13 +20,12 @@ import icon_wifi from '../../assets/images/place_ic_wifi.svg';
 
 const Wrapper = styled.div`
     margin-bottom:64px;
-    
+    height:300px;
     @media (min-width: 768px) {
         width:100%auto;
         display:flex;
         justify-content:center;
         box-sizing: border-box;
-
         margin-bottom:110px;
     }
 `

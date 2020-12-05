@@ -8,7 +8,6 @@ import img3 from '../../assets/images/place_img_thumbnail_3.svg';
 import img4 from '../../assets/images/place_img_thumbnail_4.svg';
 import img5 from '../../assets/images/place_img_thumbnail_5.svg';
 
-
 const Container = styled.div`
 border-radius: 8px;
 width: 80%;
@@ -16,14 +15,19 @@ overflow: hidden;
 justify-content: space-between;
 align-items: center;
 margin:0 auto 
-
 `;
 const SliderContainer = styled.div`
   width:100%;
   display: flex; 
+  @media (max-width:1000px) {
+    left:0;
+    margin-left:20px;
+}
+@media (min-width: 1000px) {
+    width:960px;
+}
  
 `;
-
 const Button = styled.button`
   position:relative;
   border: 1px solid ;
@@ -31,7 +35,6 @@ const Button = styled.button`
   background: url("../../assets/images/banner_ic_arrow_right.svg");
   background-color: #ffffff;
 `;
-
 
 const TOTAL_SLIDES = 5;
 
