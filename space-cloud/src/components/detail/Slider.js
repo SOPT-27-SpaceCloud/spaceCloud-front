@@ -7,33 +7,54 @@ import img2 from '../../assets/images/place_img_thumbnail_2.svg';
 import img3 from '../../assets/images/place_img_thumbnail_3.svg';
 import img4 from '../../assets/images/place_img_thumbnail_4.svg';
 import img5 from '../../assets/images/place_img_thumbnail_5.svg';
+import GridComponent from "./GridComponent";
 
 const Container = styled.div`
-border-radius: 8px;
-width: 80%;
+position: relative;
+border-radius: 4px;
+width: 360px;
+height: 300px;
 overflow: hidden; 
 justify-content: space-between;
 align-items: center;
 margin:0 auto 
 `;
 const SliderContainer = styled.div`
-  width:100%;
+  width: 99%;
   display: flex; 
   @media (max-width:1000px) {
     left:0;
-    margin-left:20px;
 }
-@media (min-width: 1000px) {
-    width:960px;
-}
+@media (min-width: 768px) {
+    display: none;
+  }
  
 `;
 const Button = styled.button`
-  position:relative;
+  position:absolute;
+  top: 150px;
+	left: 50px;
   border: 1px solid ;
-  z-index: 10;
-  background: url("../../assets/images/banner_ic_arrow_right.svg");
-  background-color: #ffffff;
+  z-index: 1;
+  background-color: transparent !important;
+  border: none;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const Button2 = styled.button`
+  position:absolute;
+  top: 150px;
+	left: 250px;
+  border: 1px solid ;
+  z-index: 1;
+  background-color: transparent !important;
+  border: none;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const TOTAL_SLIDES = 5;
@@ -61,9 +82,10 @@ const nextSlide = () => {
   }, [currentSlide]);
 return (
   <div class = "margin">
+  <GridComponent />
     <Container>
-    <Button onClick={prevSlide} > pre</Button>
-    <Button onClick={nextSlide} >next</Button>
+      <Button onClick={prevSlide} > <b>	&#60;</b></Button>
+      <Button2 onClick={nextSlide} ><b>	&#62;</b></Button2>
       <SliderContainer ref={slideRef}>
         <Slide img={img1} />
         <Slide img={img2} />

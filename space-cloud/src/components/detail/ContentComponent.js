@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 const Width = styled.div`
     //~1000px까지 960px 너비 고정
     //~768까지 마진 20px 두고 너비 좁혀지게
-
+    
     @media (min-width: 768px) and (max-width:1000px) {
         left:0;
     }
@@ -50,7 +50,7 @@ const Content = styled.div`
     }
     @media (min-width: 768px) and (max-width:1000px) {
         left:0;
-        width:460px;
+        width:378px;
         margin-left:10px;
         margin-right:10px;
     }
