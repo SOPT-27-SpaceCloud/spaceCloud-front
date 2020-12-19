@@ -50,8 +50,8 @@ const Content = styled.div`
     }
     @media (min-width: 768px) and (max-width:1000px) {
         left:0;
-        width:378px;
-        margin-left:10px;
+        width:350px;
+        margin-left:20px;
         margin-right:10px;
     }
 
