@@ -1,13 +1,57 @@
-import React from "react";
+import React, { version } from "react";
+import { useState, useEffect } from 'react';
 import './middle.scss';
 import share from '../../assets/images/detail_place_ic_share.svg'
 import heart from '../../assets/images/detail_place_ic_heart.svg'
+import datailAPI from '../../lib/api/detailAPI'
 
-const DetailMiddleComponent = () => {
+    /*
+        아직 메인페이지 서버 연결 전이어서
+        임의의 id를 직접 넘겨주는 식으로 코드를 작성했습니다.
+        await datailAPI.getFloatingInfo(/:postId);
+        이곳의 postId에 들어가는 값에 따라 다른 정보가 플로팅 컴포넌트에 출력됩니다.
+    */
 
-    //나중에 서버 연결 후 정보 받아오는 것 구현
+    /*
 
-    return(
+    [GET] 세부 공간 선택 조회
+
+    {
+        "status": 200,
+        "success": true,
+        "message": "포스트 디테일 선택 생성 성공",
+        "data": {
+            "id": 3,
+            "title": "미술 공방",
+            "contents": "미술 공방은 대형테이블과 테이블 이젤로 구성되어 있습니다.",
+            "reservationTime": "최소 3시간 전부터",
+            "capacity": "최소 5명 ~ 최대 15명",
+            "PostId": "31"
+        }
+    }
+    
+    */
+
+function DetailMiddleComponent () {
+
+   const [ floatingInfoState, setFloatingInfoState ] = useState({
+        status: 'idle',
+        data: null
+   });
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setFloatingInfoState({ status: 'pending', data: null });
+                const data = await datailAPI.getFloatingInfo(2);
+                setFloatingInfoState({ status: 'resolved', data: data });
+            } catch (e) {
+                setFloatingInfoState({ status: 'rejected', data: null});
+            }
+        })();
+    }, []);  //id값 변경시마다 실행해야 되나? 데이터가 하나인디
+
+    const FloatingElement = () => (
                 <div id = "purple_outline">
                     
                     <div class = "margin">
@@ -22,15 +66,15 @@ const DetailMiddleComponent = () => {
                         <div class = "gray_stroke"/>
 
                         <div id = "place"></div>
-                        <div class = "semi-title"><input type="radio" class = "radioBtn"></input>미술 공방</div>
-                        <div class = "place_detail">미술 공방은 대형테이블과 테이블 이젤로 구성되어 있고, 벽에는 팝아트부터 유화까지 다양한 그림들이 전시되어 있습니다. 독서모임, 취미활동 모임과 세미나 회의 등 진행하기 좋은 공간입니다. 통유리로 채광이 좋아 분위기가 매우 쾌적합니다.</div>
+                        <div class = "semi-title"><input type="radio" class = "radioBtn"></input>{floatingInfoState.data.title}</div>
+                        <div class = "place_detail">{floatingInfoState.data.contents}</div>
                         
                         <div class = "text">
-                            <div class ="gray">예약시간</div><div class = "black">최소 3시간 전부터</div>
+                            <div class ="gray">예약시간</div><div class = "black">{floatingInfoState.data.reservationTime}</div>
                         </div>
                         <div class = "gray_stroke"/>
                         <div class = "text">
-                            <div class ="gray">수용인원</div><div class ="black">최소 5명 ~ 최대 15명</div>
+                            <div class ="gray">수용인원</div><div class ="black">{floatingInfoState.data.capacity}</div>
                         </div>
                     </div>
 
@@ -58,5 +102,18 @@ const DetailMiddleComponent = () => {
                 </div>
     );
 
+    switch (floatingInfoState.status) {
+        case 'pending':
+            return <div></div>
+        case 'rejected':
+            return <h1>정보가 없습니다.</h1>;
+        case 'resolved':
+            return FloatingElement();
+        case 'idle':
+        default: 
+            return <div></div>
+    }
+
 };
+
 export default DetailMiddleComponent;

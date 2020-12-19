@@ -1,6 +1,4 @@
 import React from "react";
-import { useEffect, useState } from 'react';
-import listAPI from '../../lib/listAPI'
 import DetailFloatingComponent from './DetailFloatingComponent'
 import IconListComponent from './IconListComponent'
 import ContentComponent from "./ContentComponent";
@@ -8,7 +6,7 @@ import Slider from "./Slider";
 import TitleComponent from "./TitleComponent";
 import TopComponent from "./TopComponent";
 import BelowComponent from "./BelowComponent";
-import GridComponent from "./GridComponent";
+
 const DetailComponent = () => {
 
     //나중에 서버 연결 후 정보 받아오는 것 구현
