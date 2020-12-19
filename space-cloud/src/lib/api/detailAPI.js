@@ -2,6 +2,17 @@ import axios from 'axios';
 
 const url = 'http://52.79.176.233:3000';
 
+const getDetailInfo = async (postId) => {
+    try {
+        const { data } = await axios.get(`${url}/post/detail/${postId}`);
+        console.log('[SUCCESS] GET getDetailInfo', data);
+        return data.data;
+    } catch (e) {
+        console.error('[FAIL] GET getDetailInfo', e);
+        throw e;
+    }
+};
+
 const getFloatingInfo = async (postId) => {
     try {
         const { data } = await axios.get(`${url}/post/detail/${postId}/select`);
@@ -14,8 +25,8 @@ const getFloatingInfo = async (postId) => {
 };
 
 const detailAPI = {
-    getFloatingInfo,
-    //detail 관련 API 추가하시면 됩니다
+    getDetailInfo,
+    getFloatingInfo
 }
 
 export default detailAPI;

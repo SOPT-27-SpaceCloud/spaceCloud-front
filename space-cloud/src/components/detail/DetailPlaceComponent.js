@@ -1,9 +1,9 @@
-import React, { version } from "react";
-import { useState, useEffect } from 'react';
+import React from "react";
 import './middle.scss';
+import { useState, useEffect } from 'react';
+import datailAPI from '../../lib/api/detailAPI'
 import share from '../../assets/images/detail_place_ic_share.svg'
 import heart from '../../assets/images/detail_place_ic_heart.svg'
-import datailAPI from '../../lib/api/detailAPI'
 
     /*
         아직 메인페이지 서버 연결 전이어서
@@ -14,7 +14,7 @@ import datailAPI from '../../lib/api/detailAPI'
 
     /*
 
-    [GET] 세부 공간 선택 조회
+    [GET] 세부 공간 선택 조회 - 이미지가 빠짐
 
     {
         "status": 200,
@@ -29,7 +29,7 @@ import datailAPI from '../../lib/api/detailAPI'
             "PostId": "31"
         }
     }
-    
+
     */
 
 function DetailMiddleComponent () {
@@ -49,7 +49,7 @@ function DetailMiddleComponent () {
                 setFloatingInfoState({ status: 'rejected', data: null});
             }
         })();
-    }, []);  //id값 변경시마다 실행해야 되나? 데이터가 하나인디
+    }, []);  //나중에 main이랑 연결하면 id값 바뀔 때마다 불러오게 수정
 
     const FloatingElement = () => (
                 <div id = "purple_outline">

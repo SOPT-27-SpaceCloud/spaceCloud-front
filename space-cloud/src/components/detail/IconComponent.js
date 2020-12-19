@@ -39,9 +39,7 @@ const Text = styled.div`
     justify-content:center;
 `
 
-const DetailFloatingComponent = ({img, text}) => {
-
-    //나중에 서버 연결 후 정보 받아오는 것 구현
+const IconComponent = ({img, text}) => {
 
     return(
         <Wrapper>
@@ -53,4 +51,4 @@ const DetailFloatingComponent = ({img, text}) => {
     );
 
 };
-export default DetailFloatingComponent;
+export default IconComponent;
