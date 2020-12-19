@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from '../src/components/common/Header';
 import DetailPage from './components/detail/DetailComponent'
 
+
 function App() {
   return (
     <Router>
