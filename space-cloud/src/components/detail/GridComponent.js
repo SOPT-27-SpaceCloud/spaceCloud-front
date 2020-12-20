@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import './middle.scss';
 import styled from "styled-components";
 import img1 from '../../assets/images/place_img_thumbnail_1.svg';
@@ -6,6 +6,7 @@ import img2 from '../../assets/images/place_img_thumbnail_2.svg';
 import img3 from '../../assets/images/place_img_thumbnail_3.svg';
 import img4 from '../../assets/images/place_img_thumbnail_4.svg';
 import img5 from '../../assets/images/place_img_thumbnail_5.svg';
+import datailAPI from '../../lib/api/detailAPI'
 const Wrapper = styled.div`
 height:100px;
 margin-left:20px;
@@ -71,16 +72,43 @@ const Image3 = styled.div`
 
 
 `
-const GridComponent = () => {
-    return(
-       <Wrapper>
+function GridComponent(){
+  const [gridState, setGridState]=useState({
+    status:'idle',
+    data:null
+  });
+  useEffect(()=>{
+    (async()=>{
+      try{
+        setGridState({status:'pending',data:null});
+        const data=await datailAPI.getBannerInfo();
+        setGridState({status:'resolved',data:data});
+      }catch(e){
+        setGridState({status:'rejected',data:null});
+      }
+    })();
+  },[]);
+
+  const GridList=()=>(
+    <Wrapper>
         <Image3><img src={img1} width= '360' height='360px'  /></Image3>
         <Image><img src={img2} width= '160' height='160px'  /> </Image>
         <Image><img src={img3} width= '160' height='160px'   /> </Image>
         <Image2><img src={img4} width= '160' height='160px' /> </Image2>
-        <Image2><img src={img5} width= '160' height='160px'   /> </Image2>
-       </Wrapper>
-    );
+        <Image2><img src={img5} width= '160' height='160px'   /> </Image2> 
+   </Wrapper>
+  );
 
-};
+  switch (gridState.status) {
+    case 'pending':
+        return <div></div>
+    case 'rejected':
+        return <h1>정보가 없습니다.</h1>;
+    case 'resolved':
+        return GridList();
+    case 'idle':
+    default: 
+        return <div></div>
+  }
+}
 export default GridComponent;

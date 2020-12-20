@@ -24,9 +24,21 @@ const getFloatingInfo = async (postId) => {
     }
 };
 
+const getBannerInfo = async () => {
+    try {
+        const { data } = await axios.get(`${url}/banner`);
+        console.log('[SUCCESS] GET getBannerInfo', data);
+        return data.data;
+    } catch (e) {
+        console.error('[FAIL] GET getBannerInfo', e);
+        throw e;
+    }
+};
+
 const detailAPI = {
     getDetailInfo,
-    getFloatingInfo
+    getFloatingInfo,
+    getBannerInfo
 }
 
 export default detailAPI;
